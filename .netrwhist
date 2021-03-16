@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =5
+let g:netrw_dirhist_5='/home/raihan'
+let g:netrw_dirhist_4='/home/raihan/.vim'
+let g:netrw_dirhist_3='/home/raihan/.vim/pack'
+let g:netrw_dirhist_2='/home/raihan/.vim'
+let g:netrw_dirhist_1='/home/raihan/.vim/pack'
+let g:netrw_dirhist_0='/home/raihan/.vim/pack/themes'
+let g:netrw_dirhist_9='/home/raihan/.vim/pack'
+let g:netrw_dirhist_8='/home/raihan/.vim/pack/tpope'
+let g:netrw_dirhist_7='/home/raihan/.vim/pack/tpope/start'
+let g:netrw_dirhist_6='/home/raihan/.vim/pack/tpope'
