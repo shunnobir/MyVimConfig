@@ -1,4 +1,4 @@
-syn keyword NCType int32 string float32 bool
+syn keyword NCType int32 string float32 bool var
 hi link NCType Type
 
 syn keyword NcConditional if else for while
