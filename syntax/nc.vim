@@ -1,24 +1,37 @@
-syn keyword NCType int32 string float32 bool var
+syn keyword NCType int_t double_t char_t string bool_t var func return geti getc getd gets
+            \ int double char bool struct break continue
 hi link NCType Type
 
-syn keyword NcConditional if else for while
+syn keyword NcConditional if else elif for while
 hi link NcConditional Conditional
 
-" syn match NcNumber "[+-]\?[0-9]\+"
-" syn match NcNumber "[+-]\?[0-9]\+\.\?[0-9Ee+-]\+"
-" hi link NcNumber Number
+syn match NcNumber "\<\d\+\>"
+hi! link NcNumber Function
 
-syn keyword NcBoolType false true
+syn match NcFloat "\<\d\+.\d\+\>" contains=NcNumber
+hi! link NcFloat Type
+syn keyword NcBoolType false true nil
 hi link NcBoolType Boolean
 
-syn region NCString start="\"" end="\""
-hi link NCString String
+syn match NcSpecialCharacter "\\[a-zA-Z0-9_'\"\\]\{1}"
+hi! link NcSpecialCharacter Special
 
-syn region NCComment start="/\*" end="\*/"
-hi link NCComment Comment
+syn region NcString start="\"" end="\"" contains=NcSpecialCharacter
+hi link NcString String
 
-syn match NcSpecial "{\w*}"
-hi link NcSpecial Special
+syn region NcSpecialString start="\"" end="\"" contains=NcSpecialCharacter,NcPrintArgument
+hi link NcSpecialString String
 
-syn match NcFunction "\zs\w\+\ze("
+syn match NcComment "//.*$"
+hi! link NcComment Comment
+
+syn region NcPrintArgument start="{" end="}" 
+            \contains=NcString,NcCharacter,NcSpecialCharacter,NcNumber,NcFloat,NcFunction,
+            \NCType,NcBoolType,NcConditional,NcSpecialString,NcComment
+hi link NcPrintArgument Normal
+
+syn match NcFunction "\zs\w\+\ze\s*\n*("
 hi link NcFunction Function
+
+syn region NcCharacter start="'" end="'" contains=NcSpecialCharacter
+hi link NcCharacter Character

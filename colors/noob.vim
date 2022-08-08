@@ -26,7 +26,7 @@ hi String ctermbg=NONE guibg=NONE ctermfg=28 guifg=#008700 cterm=NONE gui=NONE
 hi! link Statement Conditional
 hi Search ctermbg=75 guibg=#5fafff ctermfg=0 guifg=#000000 cterm=NONE gui=NONE
 hi! link Incsearch Search
-hi CursorLine ctermbg=254 guibg=#e4e4e4 cterm=NONE gui=NONE
+hi CursorLine ctermbg=252 guibg=#d0d0d0 cterm=NONE gui=NONE
 hi! link Boolean Constant
 hi! link Character Constant
 hi! link Debug Special
@@ -39,9 +39,10 @@ hi! link LineNr Comment
 hi! link Repeat Type
 hi StatusLine ctermbg=252 guibg=#d0d0d0 cterm=NONE gui=NONE
 hi StatusLineNc ctermbg=248 guibg=#a8a8a8 cterm=NONE gui=NONE
-hi! link TabLine Normal
+hi! link TabLine StatusLineNc
 hi! link TabLineFill Normal
-hi TabLineSel ctermbg=15 guibg=#ffffff ctermfg=22 guifg=#005f00 cterm=NONE gui=NONE
+"hi TabLineSel ctermbg=15 guibg=#ffffff ctermfg=22 guifg=#005f00 cterm=NONE gui=NONE
+hi! link TabLineSel CursorLine
 hi Pmenu ctermbg=15 guibg=#ffffff cterm=NONE gui=NONE
 hi MatchParen ctermbg=NONE guibg=NONE ctermfg=27 guifg=#005fff cterm=underline gui=underline
 hi! link VertSplit Comment

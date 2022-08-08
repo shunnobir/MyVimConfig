@@ -3,6 +3,7 @@ syntax on
 set rtp+=~/.vim/bundle/Vundle.vim
 
 runtime! ftplugin/man.vim
+packadd termdebug
 
 " packloadall
 " silent! helptags ALL
@@ -35,6 +36,8 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'pineapplegiant/spaceduck', { 'branch': 'main' }
 " Plugin 'wesQ3/wombat.vim'
 Plugin 'dunstontc/vim-vscode-theme'
+Plugin 'puremourning/vimspector'
+Plugin 'haishanh/night-owl.vim'
 
 call vundle#end()
 
@@ -50,7 +53,7 @@ set undodir=~/.vim/undodir
 set noerrorbells
 set relativenumber
 set termguicolors
-set guifont=FiraMono\ Nerd\ Font\ Bold\ 10
+set guifont=Consolas\ 13
 set guioptions-=T
 set tabstop=4 softtabstop=4
 set shiftwidth=4
@@ -79,7 +82,7 @@ set keywordprg=:Man
 set whichwrap=<,>,[,]
 set fillchars=vert:\│,fold:\ 
 
-let noobFoldText="\t\t..."
+let noobFoldText="{...}"
 set foldtext=noobFoldText
 
 let ayucolor="light"
@@ -97,8 +100,7 @@ let g:PaperColor_Theme_Options = {
   \   }
   \ }
 
-packadd! dracula
-" set background=light
+"set background=light
 set background=dark
 
 let g:gruvbox_contrast_dark='hard'
@@ -108,7 +110,8 @@ let g:gruvbox_italicize_strings='1'
 let g:gruvbox_improved_warnings='1'
 let g:gruvbox_termcolors='256'
 
-let g:github_colors_soft=1
+let g:github_colors_soft=0
+let g:github_colors_extra_functions = 1
 
 let g:moonflyUnderlineMatchParen = 1
 let g:moonflyCursorColor = 1
@@ -122,21 +125,22 @@ endif
 
 
 " colorscheme solarized8_high
-" colorscheme solarized8_flat
-" colorscheme github
-" colorscheme monokai
-" colorscheme molokai
-" colorscheme sublimemonokai
-" colorscheme PaperColor
+"colorscheme solarized8_flat
+"colorscheme github
+"colorscheme monokai
+"colorscheme molokai
+"colorscheme sublimemonokai
+"colorscheme PaperColor
 " colorscheme gruvbox
-" colorscheme codedark
-" colorscheme ayu
-" colorscheme moonfly
-" colorscheme dracula
-" colorscheme spaceduck
-" colorscheme noob
-colorscheme dark_plus
-
+"colorscheme codedark
+"colorscheme ayu
+"colorscheme moonfly
+"colorscheme dracula
+"colorscheme spaceduck
+"colorscheme noob
+colorscheme noob2
+"colorscheme dark_plus
+"colorscheme night-owl
 
 let g:codedark_term256=1
 
@@ -144,6 +148,8 @@ if executable('rg')
     let g:rg_derive_root='true'
 endif
 
+let g:vimspector_enable_mappings = 'HUMAN'
+"packadd! vimspector
 
 " mappings start from here
 let mapleader = " "
@@ -231,6 +237,8 @@ nnoremap <C-D> <C-E><C-E><C-E><C-E><C-E>
 nnoremap <C-U> <C-Y><C-Y><C-Y><C-Y><C-Y>
 nnoremap <silent><F5> :term ++hidden ++close /home/raihan/bin/classgenerator<CR>
 nnoremap <silent> <C-N> :NERDTreeToggle<CR>
+nnoremap <F5> <Plug>VimspectorContinue
+nnoremap <silent> <C-Q> :bo term ++rows=15<CR>
 
 " comment out texts in vim
 inoremap <C-B> <ESC>I/* <ESC>A */<ESC>A
@@ -245,3 +253,4 @@ inoremap <insert> <ESC>O
 inoremap <C-F> <ESC>ldwi
 " remap CTRL-U to work in middle of a line
 inoremap <C-E> <END><C-U>
+

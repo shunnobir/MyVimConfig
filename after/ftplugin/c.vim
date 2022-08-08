@@ -47,7 +47,7 @@ setlocal tw=120
 setlocal formatoptions+=tv
 setlocal formatoptions-=l
 setlocal wrap
-setlocal foldtext='...'
+setlocal foldtext='{...}'
 
 nnoremap <F9> :vertical bo term run %:r<CR>
 nnoremap <F2> :vertical bo term run %:r -v<CR>
@@ -62,3 +62,10 @@ nnoremap <silent><leader>d :exec "silent 1vimgrep /\\<" . expand("<cword>")
 " find declaration
 nnoremap <silent><leader>gd :exec "silent 1vimgrep /" . expand("<cword>")
             \ . "/g ./*h ./include/*.h ../include/*.h"<CR>
+
+nnoremap <silent>guc I<DEL><DEL><ESC>A<BS><BS><ESC>
+nnoremap <silent>gcc @c
+vnoremap gc :normal @c<CR>
+vnoremap gu :normal @u<CR>
+inoremap <PageUp> <UP>
+inoremap <PageDown> <Down>
